@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#eaf5ef">
+<title>Wellness Pattern Finder</title>
+<style>
+:root{--bg:#f4f8f5;--card:#fff;--ink:#20352c;--muted:#6d7e74;--green:#267653;--mint:#dff2e7;--line:#e2ebe5;--orange:#f0b86b;--shadow:0 8px 24px #254b3610}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:980px;margin:auto;padding:18px 14px 36px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:6px 0 20px}.brand{display:flex;align-items:center;gap:10px}.logo{width:44px;height:44px;border-radius:15px;background:var(--green);display:grid;place-items:center;color:white;font-size:23px}.brand h1{font-size:20px;line-height:1.2;margin:0}.brand p{margin:3px 0 0;color:var(--muted);font-size:12px}.btn{border:0;border-radius:12px;padding:10px 14px;font-weight:650;background:var(--green);color:#fff}.btn.secondary{background:var(--mint);color:var(--green)}.btn.danger{background:#fff0ed;color:#a33d2f}.hero{background:linear-gradient(120deg,#e2f3e8,#f5f8e9);border-radius:22px;padding:22px;margin-bottom:16px}.eyebrow{text-transform:uppercase;letter-spacing:1.5px;font-size:11px;font-weight:800;color:var(--green)}.hero h2{font-size:25px;line-height:1.18;margin:8px 0}.hero p{color:#51675b;margin:0 0 16px;max-width:550px}.date{font-size:13px;color:var(--muted);margin-bottom:8px}.grid{display:grid;grid-template-columns:1fr;gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:17px;box-shadow:var(--shadow);min-width:0}.card h3{margin:0 0 4px;font-size:17px}.sub{color:var(--muted);font-size:13px;margin:0 0 14px}.field{margin:14px 0}.field label,.field legend{display:block;font-weight:650;font-size:13px;margin-bottom:7px}.field input[type=number],.field input[type=date],.field input[type=text],.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid #d7e3db;border-radius:11px;background:#fff;color:var(--ink)}input[type=range]{width:100%;accent-color:var(--green)}.rangehead{display:flex;justify-content:space-between;align-items:center}.value{font-weight:800;color:var(--green)}.moods{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.mood{border:1px solid var(--line);border-radius:12px;padding:9px 2px;background:#fff;text-align:center;color:var(--ink)}.mood span{display:block;font-size:23px}.mood small{font-size:11px}.mood.active{border:2px solid var(--green);background:var(--mint)}.tags{display:flex;gap:8px;flex-wrap:wrap}.tag{background:#f0f5f1;border-radius:20px;padding:7px 10px;font-size:12px}.tag input{accent-color:var(--green)}.formactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}.metric{padding:13px;border-radius:14px;background:#f5f8f5}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{font-size:23px}.metric small{font-size:11px;color:var(--muted)}.chart{width:100%;height:auto;display:block;overflow:visible}.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;background:var(--green)}.heatmap{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.heat{aspect-ratio:1;border-radius:7px;display:grid;place-items:center;font-size:11px;color:#244b35;background:#edf3ef}.heat.none{background:#f0f2f0;color:#9aa59e}.insight{border-left:3px solid var(--green);background:#f3f8f4;padding:11px 12px;border-radius:0 12px 12px 0;margin:9px 0;font-size:13px}.notice{padding:10px 12px;background:#fff8e9;border-radius:12px;color:#755621;font-size:12px}.tabs{display:flex;gap:7px;overflow-x:auto;margin:0 0 14px}.tab{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:20px;padding:8px 12px;color:var(--muted)}.tab.active{background:var(--green);border-color:var(--green);color:white}.hidden{display:none!important}.empty{text-align:center;padding:24px 8px;color:var(--muted)}.empty span{font-size:30px}.footer{text-align:center;color:var(--muted);font-size:11px;padding:20px 6px}.inline{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.inline select{flex:1;min-width:120px;padding:9px;border:1px solid var(--line);border-radius:10px;background:#fff}.weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center;color:var(--muted);font-size:10px;margin-bottom:5px}
+@media(min-width:700px){.app{padding:24px}.grid{grid-template-columns:1fr 1fr}.wide{grid-column:1/-1}.hero{padding:28px}.hero h2{font-size:31px}.metrics{grid-template-columns:repeat(4,1fr)}}
+@media print{body{background:white}.app{max-width:none}.top button,.tabs,.formactions,.no-print{display:none!important}.card,.hero{box-shadow:none;break-inside:avoid}.grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="brand"><div class="logo">✿</div><div><h1>Wellness Pattern Finder</h1><p>Small check-ins. Helpful patterns.</p></div></div>
+ <button class="btn secondary" id="themeBtn" type="button">◐ Theme</button>
+</header>
+<section class="hero">
+ <div class="eyebrow">Your personal wellness journal</div>
+ <h2>Notice what helps you feel your best.</h2>
+ <p>Track everyday habits and explore gentle observations over time. Your entries stay in this browser on this device.</p>
+ <div class="inline"><button class="btn" onclick="document.querySelector('#checkin').scrollIntoView({behavior:'smooth'})">＋ Daily check-in</button><button class="btn secondary" id="demoBtn">Load demo week</button></div>
+</section>
+<div class="tabs no-print" aria-label="Dashboard date range">
+ <button class="tab active" data-days="7">7 days</button><button class="tab" data-days="30">30 days</button><button class="tab" data-days="90">90 days</button>
+</div>
+<div class="metrics">
+ <div class="metric"><span>Entries in range</span><strong id="countMetric">0</strong><small>days recorded</small></div>
+ <div class="metric"><span>Average sleep</span><strong id="sleepMetric">—</strong><small>hours per entry</small></div>
+ <div class="metric"><span>Average mood</span><strong id="moodMetric">—</strong><small>out of 5</small></div>
+ <div class="metric"><span>Current streak</span><strong id="streakMetric">0</strong><small>consecutive days</small></div>
+</div>
+<div class="grid">
+ <section class="card" id="checkin">
+  <h3>Daily check-in</h3><p class="sub">Usually takes about 30 seconds.</p>
+  <form id="entryForm">
+   <div class="field"><label for="entryDate">Date</label><input type="date" id="entryDate" required></div>
+   <div class="field"><div class="rangehead"><label for="sleep">Sleep (hours)</label><span class="value" id="sleepVal">8 h</span></div><input id="sleep" type="range" min="0" max="14" step=".5" value="8"></div>
+   <div class="field"><div class="rangehead"><label for="water">Water (glasses)</label><span class="value" id="waterVal">6</span></div><input id="water" type="range" min="0" max="20" step="1" value="6"></div>
+   <div class="field"><div class="rangehead"><label for="activity">Activity (minutes)</label><span class="value" id="activityVal">20 min</span></div><input id="activity" type="range" min="0" max="180" step="5" value="20"></div>
+   <div class="field"><label>Mood</label><div class="moods" id="moodChoices">
+    <button type="button" class="mood" data-mood="1"><span>😞</span><small>Low</small></button><button type="button" class="mood" data-mood="2"><span>😕</span><small>Okay</small></button><button type="button" class="mood active" data-mood="3"><span>😐</span><small>Fine</small></button><button type="button" class="mood" data-mood="4"><span>🙂</span><small>Good</small></button><button type="button" class="mood" data-mood="5"><span>😄</span><small>Great</small></button>
+   </div></div>
+   <div class="field"><div class="rangehead"><label for="energy">Energy</label><span class="value" id="energyVal">3 / 5</span></div><input id="energy" type="range" min="1" max="5" step="1" value="3"></div>
+   <div class="field"><label>Tags (optional)</label><div class="tags"><label class="tag"><input type="checkbox" name="tag" value="workout"> Workout</label><label class="tag"><input type="checkbox" name="tag" value="study"> Study</label><label class="tag"><input type="checkbox" name="tag" value="outdoors"> Outdoors</label><label class="tag"><input type="checkbox" name="tag" value="social"> Social</label><label class="tag"><input type="checkbox" name="tag" value="busy day"> Busy day</label></div></div>
+   <div class="field"><label for="note">Note (optional)</label><textarea id="note" rows="2" maxlength="180" placeholder="Anything you want to remember…"></textarea></div>
+   <div class="formactions"><button class="btn" type="submit">Save check-in</button><button class="btn secondary" type="button" id="clearForm">Reset form</button></div>
+   <p id="saveMessage" role="status" aria-live="polite"></p>
+  </form>
+ </section>
+ <section class="card">
+  <h3>Weekly trend</h3><p class="sub">Mood and sleep across your recent entries.</p>
+  <svg id="trendChart" class="chart" viewBox="0 0 340 210" role="img" aria-label="Trend chart of mood and sleep"><text x="170" y="100" text-anchor="middle" fill="#6d7e74">Add check-ins to see your trend</text></svg>
+  <div class="legend"><span><i class="dot"></i>Mood (1–5)</span><span><i class="dot" style="background:#e3a34f"></i>Sleep (hours ÷ 2)</span></div>
+  <p class="notice">Sleep is scaled down for this shared chart. The values are descriptive, not health assessments.</p>
+ </section>
+ <section class="card">
+  <h3>Mood calendar</h3><p class="sub">A quick view of recorded mood by date.</p>
+  <div class="weekdays"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+  <div class="heatmap" id="heatmap"></div><p class="sub" style="margin-top:10px">Darker green indicates a higher mood rating. Grey means no entry.</p>
+ </section>
+ <section class="card">
+  <h3>Gentle observations</h3><p class="sub">Possible patterns in your saved entries.</p><div id="insights"><div class="empty"><span>🌱</span><p>Your observations will appear after you save some check-ins.</p></div></div>
+  <p class="notice">Patterns are only observations. They do not prove cause and effect and are not medical advice.</p>
+ </section>
+ <section class="card wide">
+  <div class="inline" style="justify-content:space-between"><div><h3>Your entries</h3><p class="sub">Edit a date by saving a new check-in for that date.</p></div><div class="inline no-print"><button class="btn secondary" id="exportBtn">Export JSON</button><button class="btn secondary" onclick="window.print()">Print summary</button></div></div>
+  <div id="entriesList"><div class="empty">No entries yet. Save your first check-in above.</div></div>
+  <div class="formactions no-print"><button class="btn secondary" id="importBtn">Import JSON</button><input type="file" id="importFile" accept=".json,application/json" class="hidden"><button class="btn danger" id="eraseBtn">Erase all data</button></div>
+ </section>
+</div>
+<div class="footer">Wellness Pattern Finder · Educational tool only · Data stays in this browser unless you export it.</div>
+</div>
+<script>
+(() => {
+'use strict';
+const KEY='wellnessPatternFinder.entries.v1';
+let entries=loadEntries(), selectedMood=3, rangeDays=7;
+const $=id=>document.getElementById(id);
+const today=()=>new Date().toLocaleDateString('en-CA');
+const safeDate=d=>/^\\d{4}-\\d{2}-\\d{2}$/.test(d||'');
+function loadEntries(){try{const v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v.filter(e=>e&&safeDate(e.date)&&Number.isFinite(+e.mood)):[]}catch{return []}}
+function saveEntries(){try{localStorage.setItem(KEY,JSON.stringify(entries));return true}catch{return false}}
+function fmtDate(s){return new Date(s+'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})}
+function avg(arr,key){const a=arr.map(x=>Number(x[key])).filter(Number.isFinite);return a.length?a.reduce((s,v)=>s+v,0)/a.length:null}
+function filtered(days=rangeDays){const cutoff=new Date();cutoff.setDate(cutoff.getDate()-days+1);const start=cutoff.toLocaleDateString('en-CA');return entries.filter(e=>e.date>=start&&e.date<=today()).sort((a,b)=>a.date.localeCompare(b.date))}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function updateRanges(){ $('sleepVal').textContent=$('sleep').value+' h';$('waterVal').textContent=$('water').value;$('activityVal').textContent=$('activity').value+' min';$('energyVal').textContent=$('energy').value+' / 5'}
+['sleep','water','activity','energy'].forEach(id=>$(id).addEventListener('input',updateRanges));
+$('entryDate').value=today();
+document.querySelectorAll('[data-mood]').forEach(b=>b.addEventListener('click',()=>{selectedMood=+b.dataset.mood;document.querySelectorAll('[data-mood]').forEach(x=>x.classList.toggle('active',x===b))}));
+$('entryForm').addEventListener('submit',e=>{
+ e.preventDefault();const date=$('entryDate').value;if(!safeDate(date)){return}
+ const record={date,sleep:+$('sleep').value,water:+$('water').value,activity:+$('activity').value,mood:selectedMood,energy:+$('energy').value,tags:[...document.querySelectorAll('input[name="tag"]:checked')].map(x=>x.value),note:$('note').value.trim()};
+ const i=entries.findIndex(x=>x.date===date);if(i>=0)entries[i]=record;else entries.push(record);entries.sort((a,b)=>a.date.localeCompare(b.date));
+ const ok=saveEntries();$('saveMessage').textContent=ok?'Check-in saved on this device.':'Could not save: browser storage may be full or disabled.';render();
+});
+$('clearForm').addEventListener('click',()=>{$('entryForm').reset();selectedMood=3;document.querySelectorAll('[data-mood]').forEach(x=>x.classList.toggle('active',x.dataset.mood==='3'));$('entryDate').value=today();updateRanges();$('saveMessage').textContent=''});
+document.querySelectorAll('[data-days]').forEach(b=>b.addEventListener('click',()=>{rangeDays=+b.dataset.days;document.querySelectorAll('[data-days]').forEach(x=>x.classList.toggle('active',x===b));render()}));
+function render(){const data=filtered();$('countMetric').textContent=data.length;$('sleepMetric').textContent=avg(data,'sleep')===null?'—':avg(data,'sleep').toFixed(1)+' h';$('moodMetric').textContent=avg(data,'mood')===null?'—':avg(data,'mood').toFixed(1);
+ let streak=0,d=new Date();for(let i=0;i<366;i++){const ds=d.toLocaleDateString('en-CA');if(entries.some(e=>e.date===ds)){streak++;d.setDate(d.getDate()-1)}else if(i===0){d.setDate(d.getDate()-1);const y=d.toLocaleDateString('en-CA');if(entries.some(e=>e.date===y)){streak++;d.setDate(d.getDate()-1)}else break}else break}$('streakMetric').textContent=streak;
+ renderChart(data);renderHeatmap();renderInsights(data);renderEntries();
+}
+function renderChart(data){const svg=$('trendChart');if(!data.length){svg.innerHTML='<text x="170" y="100" text-anchor="middle" fill="#6d7e74">Add check-ins to see your trend</text>';return}
+ const recent=data.slice(-7),w=340,h=210,left=28,right=12,top=18,bottom=30,iw=w-left-right,ih=h-top-bottom;
+ const x=i=>left+(recent.length===1?iw/2:i*iw/(recent.length-1)),y=v=>top+ih-(Math.max(0,Math.min(5,v))/5)*ih;
+ let out='';for(let n=0;n<=5;n++){out+=`<line x1="${left}" y1="${y(n)}" x2="${w-right}" y2="${y(n)}" stroke="#e5ede7"/><text x="${left-8}" y="${y(n)+4}" font-size="10" text-anchor="end" fill="#819087">${n}</text>`}
+ const line=(key,scale,color)=>{const pts=recent.map((e,i)=>`${x(i)},${y(e[key]*scale)}`).join(' ');return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>`+recent.map((e,i)=>`<circle cx="${x(i)}" cy="${y(e[key]*scale)}" r="3.5" fill="${color}"/>`).join('')};
+ out+=line('mood',1,'#267653')+line('sleep',.5,'#e3a34f');
+ recent.forEach((e,i)=>{if(i%Math.max(1,Math.ceil(recent.length/7))===0||i===recent.length-1)out+=`<text x="${x(i)}" y="${h-9}" text-anchor="middle" font-size="10" fill="#819087">${esc(e.date.slice(5))}</text>`});
+ svg.innerHTML=out;
+}
+function renderHeatmap(){const box=$('heatmap');box.innerHTML='';const now=new Date();const first=new Date(now.getFullYear(),now.getMonth(),1);let offset=(first.getDay()+6)%7;for(let i=0;i<offset;i++){const el=document.createElement('div');el.className='heat none';el.textContent='';box.appendChild(el)}
+ const count=new Date(now.getFullYear(),now.getMonth()+1,0).getDate();for(let day=1;day<=count;day++){const d=new Date(now.getFullYear(),now.getMonth(),day),ds=d.toLocaleDateString('en-CA'),entry=entries.find(e=>e.date===ds),el=document.createElement('div');el.className='heat'+(entry?'':' none');el.textContent=day;el.title=entry?`${ds}: mood ${entry.mood}/5`:`${ds}: no entry`;if(entry){const colors=['#e6f4eb','#c6e8d2','#91d2aa','#58ae7b','#267653'];el.style.background=colors[entry.mood-1];el.style.color=entry.mood>=4?'white':'#244b35'}box.appendChild(el)}}
+function renderInsights(data){const box=$('insights');if(data.length<4){box.innerHTML=`<div class="empty"><span>🌱</span><p>Record at least 4 days to start seeing cautious observations. You have ${data.length}.</p></div>`;return}
+ let messages=[];const high=data.filter(e=>e.sleep>=7),low=data.filter(e=>e.sleep<7);if(high.length>=2&&low.length>=2){const diff=avg(high,'mood')-avg(low,'mood');messages.push(`Your average mood was ${Math.abs(diff).toFixed(1)} point${Math.abs(diff).toFixed(1)==='1.0'?'':'s'} ${diff>=0?'higher':'lower'} on entries with 7+ hours of sleep than on entries with less than 7 hours.`)}
+ const active=data.filter(e=>e.activity>=20),less=data.filter(e=>e.activity<20);if(active.length>=2&&less.length>=2){const diff=avg(active,'mood')-avg(less,'mood');messages.push(`Entries with 20+ activity minutes had an average mood ${Math.abs(diff).toFixed(1)} points ${diff>=0?'higher':'lower'} than entries with less activity.`)}
+ const enoughWater=data.filter(e=>e.water>=6),lessWater=data.filter(e=>e.water<6);if(enoughWater.length>=2&&lessWater.length>=2){const diff=avg(enoughWater,'energy')-avg(lessWater,'energy');messages.push(`Average energy was ${Math.abs(diff).toFixed(1)} points ${diff>=0?'higher':'lower'} on days you logged 6+ glasses of water.`)}
+ const workout=data.filter(e=>(e.tags||[]).includes('workout'));if(workout.length>=2)messages.push(`You tagged ${workout.length} entries as workout days; their average mood was ${avg(workout,'mood').toFixed(1)}/5.`);
+ if(!messages.length)messages.push('Keep recording different kinds of days. You need enough entries in both groups before a comparison can be shown.');
+ box.innerHTML=messages.map(m=>`<div class="insight">${esc(m)}</div>`).join('')+'<p class="sub">Based on '+data.length+' entries in this date range. These are simple comparisons, not proof that one habit caused another.</p>';
+}
+function renderEntries(){const box=$('entriesList'),data=[...entries].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,10);if(!data.length){box.innerHTML='<div class="empty">No entries yet. Save your first check-in above.</div>';return}
+ box.innerHTML=data.map(e=>`<div style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)"><div><strong>${esc(fmtDate(e.date))}</strong><div class="sub" style="margin:3px 0 0">Mood ${e.mood}/5 · Sleep ${e.sleep} h · Water ${e.water} · Activity ${e.activity} min</div>${e.tags?.length?`<div class="sub" style="margin:3px 0 0">${e.tags.map(esc).join(' · ')}</div>`:''}${e.note?`<div class="sub" style="margin:3px 0 0">${esc(e.note)}</div>`:''}</div><button class="btn secondary" data-edit="${esc(e.date)}" type="button">Edit</button></div>`).join('');
+ box.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click',()=>{const e=entries.find(x=>x.date===b.dataset.edit);if(!e)return;$('entryDate').value=e.date;['sleep','water','activity','energy'].forEach(k=>$(k).value=e[k]);$('note').value=e.note||'';document.querySelectorAll('input[name="tag"]').forEach(x=>x.checked=(e.tags||[]).includes(x.value));selectedMood=e.mood;document.querySelectorAll('[data-mood]').forEach(x=>x.classList.toggle('active',+x.dataset.mood===selectedMood));updateRanges();$('checkin').scrollIntoView({behavior:'smooth'});}));
+}
+$('exportBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({app:'Wellness Pattern Finder',version:1,entries},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='wellness-entries.json';a.click();URL.revokeObjectURL(url)});
+$('importBtn').addEventListener('click',()=>$('importFile').click());
+$('importFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const raw=JSON.parse(await f.text()),arr=Array.isArray(raw)?raw:raw.entries;if(!Array.isArray(arr))throw Error('Invalid format');const clean=arr.filter(x=>x&&safeDate(x.date)&&[1,2,3,4,5].includes(+x.mood)).map(x=>({date:x.date,sleep:clamp(x.sleep,0,14,8),water:clamp(x.water,0,20,6),activity:clamp(x.activity,0,180,0),mood:+x.mood,energy:clamp(x.energy,1,5,3),tags:Array.isArray(x.tags)?x.tags.map(String).slice(0,10):[],note:String(x.note||'').slice(0,180)}));if(!confirm(`Import ${clean.length} entries? Dates already present will be replaced.`))return;clean.forEach(x=>{const i=entries.findIndex(y=>y.date===x.date);if(i>=0)entries[i]=x;else entries.push(x)});entries.sort((a,b)=>a.date.localeCompare(b.date));saveEntries();render();alert('Import complete.')}catch(err){alert('Could not import this file. Please choose a valid Wellness Pattern Finder JSON export.')}e.target.value=''});
+function clamp(v,min,max,fallback){v=Number(v);return Number.isFinite(v)?Math.max(min,Math.min(max,v)):fallback}
+$('eraseBtn').addEventListener('click',()=>{if(confirm('Erase all Wellness Pattern Finder entries from this browser? This cannot be undone unless you exported a backup.')){entries=[];saveEntries();render();$('saveMessage').textContent='All saved entries erased.'}});
+$('demoBtn').addEventListener('click',()=>{if(entries.length&&!confirm('Add a sample week? Existing dates may be replaced.'))return;const moods=[3,4,4,2,3,5,4];const now=new Date();for(let i=6;i>=0;i--){const d=new Date(now);d.setDate(d.getDate()-i);const date=d.toLocaleDateString('en-CA');entries=entries.filter(e=>e.date!==date);entries.push({date,sleep:[7,8,6.5,7.5,6,8.5,7][6-i],water:[5,7,4,6,5,8,7][6-i],activity:[15,30,10,25,0,40,20][6-i],mood:moods[6-i],energy:[3,4,2,3,3,5,4][6-i],tags:i===1?['workout']:[],note:'Sample demo entry'})}entries.sort((a,b)=>a.date.localeCompare(b.date));saveEntries();render();$('saveMessage').textContent='Demo week loaded. These are sample entries; edit or erase them anytime.'});
+$('themeBtn').addEventListener('click',()=>{const dark=document.body.dataset.theme!=='dark';document.body.dataset.theme=dark?'dark':'light';document.documentElement.style.setProperty('--bg',dark?'#15231c':'#f4f8f5');document.documentElement.style.setProperty('--card',dark?'#20352a':'#fff');document.documentElement.style.setProperty('--ink',dark?'#eef7f0':'#20352c');document.documentElement.style.setProperty('--muted',dark?'#b5c8bb':'#6d7e74');document.documentElement.style.setProperty('--line',dark?'#344b3d':'#e2ebe5');document.querySelectorAll('.field input,.field select,.field textarea,.mood,.tab').forEach(el=>{if(dark)el.style.background='#263d30';else el.style.background=''});});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){$('entryDate').value=today()}});
+updateRanges();render();
+})();
+</script>
+</body>
+</html>
